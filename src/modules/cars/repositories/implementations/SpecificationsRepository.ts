@@ -1,4 +1,4 @@
-import { Specification } from "../../model/Specification";
+import { Specification } from "../../entities/Specification";
 import {
   ICreateSpecificationDTO,
   ISpecificationsRepository,
@@ -7,7 +7,7 @@ import {
 class SpecificationsRepository implements ISpecificationsRepository {
   private specifications: Specification[];
 
-  private static INSTANCE: SpecificationsRepository; 
+  private static INSTANCE: SpecificationsRepository;
 
   private constructor() {
     this.specifications = [];
