@@ -2,6 +2,7 @@ import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { ICreateUsersDTO } from "../../dtos/ICreateUserDTO";
 import { hash } from "bcrypt";
+import { AppError } from "../../../../errors/AppError";
 
 @injectable()
 class CreateUserUseCase {
@@ -18,7 +19,7 @@ class CreateUserUseCase {
   }: ICreateUsersDTO): Promise<void> {
     const userAlreadyExists = this.usersRepository.findByEmail(email);
     if (userAlreadyExists) {
-      throw new Error("E-mail already registered!");
+      throw new AppError("E-mail already registered!");
     }
 
     const passwordHash = await hash(password, 8);
@@ -31,7 +32,7 @@ class CreateUserUseCase {
         driverLicense,
       });
     } catch (err) {
-      console.log(err);
+      throw new AppError("User registration failed");
     }
   }
 }
