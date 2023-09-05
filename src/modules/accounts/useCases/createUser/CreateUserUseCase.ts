@@ -11,7 +11,6 @@ class CreateUserUseCase {
 
   async execute({
     name,
-    username,
     email,
     password,
     driverLicense,
@@ -19,7 +18,6 @@ class CreateUserUseCase {
     try {
       await this.usersRepository.create({
         name,
-        username,
         email,
         password,
         driverLicense,
