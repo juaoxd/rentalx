@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { Router } from "express";
 import { CreateUserController } from "@modules/accounts/useCases/createUser/CreateUserController";
 import { UpdateUserAvatarController } from "@modules/accounts/useCases/updateUserAvatar/UpdateUserAvatarController";

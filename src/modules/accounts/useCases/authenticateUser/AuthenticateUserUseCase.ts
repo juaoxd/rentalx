@@ -1,4 +1,4 @@
-import "reflect-metadata";
+
 import { inject, injectable } from "tsyringe";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { compare } from "bcrypt";

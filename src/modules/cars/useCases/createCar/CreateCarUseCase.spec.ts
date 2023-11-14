@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { CreateCarUseCase } from "./CreateCarUseCase";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
