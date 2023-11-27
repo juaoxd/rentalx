@@ -2,6 +2,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Generated,
   JoinColumn,
   ManyToMany,
   ManyToOne,
@@ -13,6 +14,7 @@ import { Category } from "./Category";
 @Entity("cars")
 class Car {
   @PrimaryColumn()
+  @Generated('uuid')
   id?: string;
 
   @Column()
